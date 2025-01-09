@@ -1,0 +1,696 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0;  globaalselt on peatükkide vahed suuremad */
+    padding: 0;
+    font-family: "Montserrat" , serif; 
+    
+}
+
+
+
+/* --------------KERIMISRIBA---------------- */
+html {scroll-behavior: smooth;}
+  
+  a { color: #0a1118;; }
+  a:hover { color: #0a1118;; }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #272a2e; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+/* -----------NAVBAR-------------- */
+.navbar {
+    background: rgba(19, 19, 19, 0.5);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+} 
+
+#navbar__logo {
+    background-color: #0a0a0a;
+    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.4rem
+    
+}
+
+.fa-solid {
+    margin-right: 1rem;
+}
+
+.navbar__logo-image {
+    height: 50px; /* Adjust the height of the image */
+    width: auto;  /* Maintains the aspect ratio */
+    margin-right: 1rem; /* Adds spacing between the image and the text */
+    vertical-align: middle; /* Aligns the image with the text */
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links {
+  color: #ffffffc5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+/* ------------VÄLJA LÜLITATUD----------- */
+.button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f77062;
+    color: #fff;
+}
+
+.button:hover {
+    background: #4837ff;
+    transition: all 0.3s ease;
+
+}
+
+.navbar__links:hover {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+}
+
+/*--------------------- MOBILE ---------------------------*/
+
+@media screen and (max-width: 960px) {
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0; 
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: #131313;
+    }
+
+    .navbar__menu.active {
+        background: rgba(19, 19, 19, 0.7);
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 40vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    }
+    .navbar__item {
+    width: 100%;
+    }
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+
+
+}
+/*---------------------HERO VIDEO ---------------------*/
+#hero {
+
+    height: 100vh;
+    width: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+/* ------------------OVERLAY------------*/
+#hero::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    z-index:10;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+#hero video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    object-fit: cover;
+
+}
+/* ------------VARI VIDEO PEAL------------ */
+#hero .texture {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index:15;
+    /* background:url('/images/texture.png'); */
+
+}
+/* KIRI VIDEO PEAL */
+#hero .caption {
+    position:relative;
+    z-index:20;
+    text-align: center;
+    color:#ffffff;
+    
+
+}
+
+#hero .caption h1 {
+
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 0.5rem;
+    font-weight: 100;
+}
+
+#hero .caption h2 {
+
+    font-weight: 100;
+    font-size: 1.5rem;
+    margin: 0;
+    
+    
+}
+/* ------------OTHER DEVICES------------- */
+
+@media screen and (min-width:768px)
+{
+    #hero .caption h1 {
+        font-size:2.5rem;
+    }
+
+    #hero .caption h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width:992px)
+{
+    #hero .caption h1 {
+        font-size:3rem;
+    }
+
+    #hero .caption h2 {
+        font: size 2rem;
+    }
+}
+
+@media screen and (min-width:1200px)
+{
+    #hero .caption h1 {
+        font-size:4rem;
+    }
+
+    #hero .caption h2 {
+        font: size 2.5rem;
+    }
+}
+/* -----------HERO SCROLL -------------*/
+.hero__scroll-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.hero__scroll-btn:hover {
+    color: #979797;
+    opacity: 0.8;
+  }
+  
+  .hero__scroll-btn .bi {
+    transition-delay: 0.8s;
+    animation: bounce 1s infinite alternate;
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+}
+
+
+/* ----------GALERII OSA CSS----------- */
+.gallery {
+    background: #000000;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-bottom: 10rem;
+    position:relative;
+}
+
+.gallery h1 {
+    
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(134,134,134,1) 49%, rgba(255,255,255,1) 100%);
+    background-size: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
+    font-weight: 100;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+}
+
+.gallery__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.gallery__card {
+    margin: 3rem;
+    height:420px;
+    width: 420px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,
+     rgba(17,17,17,0.9) 100%), url("images/dafuq.jpg");
+     
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff
+}
+
+.gallery__card:nth-child(2){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, 
+    rgba(17,17,17,0.6) 100%), url("images/pic4.jpg");
+}
+
+.gallery__card h2 {
+position: absolute;
+top: 350px;
+left: 30px;
+}
+
+.gallery__card p {
+    position: absolute;
+    top: 400px;
+    left: 30px;
+}
+
+/* .gallery__card button {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f77062;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+} */
+
+.gallery__card:hover {
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor:pointer;
+}
+
+/* ---------VIDEO CARDS CSS------------ */
+
+.video__card {
+    margin: 3rem;
+    height:420px;
+    width: 420px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,
+     rgba(17,17,17,0.9) 100%), url("images/pic3.jpg");
+     
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #fff
+}
+
+.video__card:nth-child(2){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, 
+    rgba(17,17,17,0.6) 100%), url("images/pic444.jpg");
+}
+
+.video__card:nth-child(3){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, 
+    rgba(17,17,17,0.6) 100%), url("images/pic444.jpg");
+}
+.__card:nth-child(4){
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, 
+    rgba(17,17,17,0.6) 100%), url("images/pic4.jpg");
+}
+
+.video__card h2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+    }
+
+
+
+.video__card:hover {
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor:pointer;
+}
+
+#back-to-portfolio {
+    outline:none;
+    border:none;
+    background: transparent;
+    cursor: pointer;
+    color: #979797;
+    font-size: xx-large;
+    position:absolute;
+    top: 100px;    
+}
+
+.fa-arrow-left:hover {
+    color: white;
+    opacity: 0.8;
+  }
+
+@media screen and (max-width: 2000px) {
+    .gallery {
+        height: auto;
+    }
+    
+    .gallery h1 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .gallery {
+        height: auto;   /* oli 1600px */
+    }
+    
+    .gallery h1 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery {
+        height: auto; /* oli 2000px */
+    }
+
+    .gallery h1 {
+        font-size: 1.2rem;
+    }
+
+    .gallery__card {
+        width: 300px;
+    }
+}
+
+
+
+/* ---------FOOTER ------------*/
+
+.footer {
+    background-color: #181818;
+    /* This gives you a dark background */
+    color: #ffffff;
+    /* This sets the text color to white */
+    padding: 16px 0;
+    /* This adds padding of 16px (equivalent to py-4 in Bootstrap) on the top and bottom */
+    
+}
+
+.footer-container {
+    
+    max-width: 1300px;
+     margin: 0 auto;
+    
+    
+}
+
+.row {
+    display: flex; 
+    align-items: center; /* This vertically aligns the items in the center */
+    flex-wrap:wrap;
+}
+
+.column1 {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+
+@media (min-width: 576px) {
+    .column1 {
+        width: 33.33%
+    }
+}
+
+.footer-logo {
+    width: 300px;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.column2-3 {
+    width: 100%; /* Full width for smaller screens (col-12 equivalent) */
+    margin-bottom: 1.5rem; /* mb-4 equivalent */
+    text-align: center; /* text-center equivalent */
+    display: flex; /* d-flex equivalent */
+    flex-direction: column; /* flex-column equivalent */
+    justify-content: center; /* justify-content-center equivalent */
+    box-sizing: border-box; /* Ensures padding/border don't affect width */
+}
+
+/* Add responsiveness for larger screens (col-sm-4 equivalent) */
+@media (min-width: 576px) {
+    .column2-3 {
+        width: 33.33%; /* Takes up 4/12 columns (one-third of the row) */
+    }
+}
+
+/* footer branding */
+
+.branding {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 5rem;
+    margin: 0 auto;
+    max-width: 1300px;
+    border-top: 1px solid #233D54;
+    box-sizing: border-box;
+    padding-top: 1rem;
+}
+
+.column-brand {
+    width: 100%; /* Default: Full-width for smaller screens */
+    display: flex; /* d-flex equivalent */
+    align-items: center; /* align-items-center equivalent */
+    box-sizing: border-box; /* Ensures padding/border doesn't affect size */
+}
+@media (min-width: 768px) {
+    .column-brand {
+        width: 33.33%; /* Takes up 4/12 columns (one-third of the row) */
+    }
+}
+
+.copyright {
+    margin-right: 0.5rem;
+    color: #6c757d;
+    text-decoration: none;  
+}
+
+.copyright:hover {
+    color: #5a6268;
+}
+
+.copyright span {
+    font-size: 1rem;
+}
+
+.social-media-links {
+    display: flex; /* d-flex equivalent */
+    justify-content: flex-end; /* justify-content-end equivalent */
+    list-style: none; /* list-unstyled equivalent */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
+    width: 100%; /* Full width by default */
+    color: white; /* text-white equivalent */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+}
+
+/* Responsive width for col-md-4 equivalent */
+@media (min-width: 768px) {
+    .social-media-links {
+        width: 33.33%; /* col-md-4 equivalent */
+    }
+}
+
+/* Styling for the list items */
+.social-media-links li {
+    margin-left: 1rem; /* Space between list items */
+}
+
+/* Styling for the links */
+.social-media-links a {
+    text-decoration: none; /* Remove underlines */
+    color: #6c757d
+}
+
+.social-media-links a:hover {
+    color: #5a6268; /* Optional: Change color on hover */
+}
