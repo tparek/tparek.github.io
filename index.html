@@ -27,13 +27,13 @@
         </div>
         <ul class="navbar__menu">
             <li class="navbar__item">
-                <a href="/" class="navbar__links">Video</a>
+                <a href="index.html#videos-section" class="navbar__links" id="videonav">Video</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="/video.html" class="navbar__links">Photo</a>
+                    <a href="photos.html" class="navbar__links">Photo</a>
                      </li>
                      <li class="navbar__item">
-                        <a href="/photo.html" class="navbar__links">About</a>
+                        <a href="about.html" class="navbar__links">About</a>
                          </li>
 
                          <!-- <li class="navbar__btn">
@@ -45,33 +45,64 @@
     <!----------------- NAVBAR END------------------->
     <!---------------- HERO VIDEO -->
     <div id="hero">
-
-
-        <div class="texture"></div>
-
+        <!-- Background Video -->
         <video
-        loop
-        muted ="true"
-        autoplay
-        preload="auto"
-        aria-label="Background video showcasing Lone Wolf's work">
-        >
-              <source src="images/compressed.mp4" type="video/mp4">
-              Your browser does not support the video tag.  
+          src="images/showreel.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="hero-video"
+          aria-label="Background video showcasing Lone Wolf's work">
         </video>
-
-
-
-        <div class="caption">
-
-              <h1>Capturing Moments, Crafting Stories</h1>
-              <h2>bring your vision to life</h2>
-
+      
+        <!-- Optional Dark Overlay -->
+        <div class="hero-overlay"></div>
+      
+        <!-- Hero Content (Text) -->
+        <div class="hero-content">
+          <h1>Capturing Moments, Crafting Stories</h1>
+          <h2>Bring your vision to life</h2>
         </div>
+      
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <!-- The 12 images + duplicates for loop -->
+            <img src="images/carousel/carousel1.png" alt="Carousel Image 1" />
+            <img src="images/carousel/carousel2.png" alt="Carousel Image 2" />
+            <img src="images/carousel/carousel3.png" alt="Carousel Image 3" />
+            <img src="images/carousel/carousel4.png" alt="Carousel Image 4" />
+            <img src="images/carousel/carousel5.png" alt="Carousel Image 5" />
+            <img src="images/carousel/carousel6.png" alt="Carousel Image 6" />
+            <img src="images/carousel/carousel7.png" alt="Carousel Image 7" />
+            <img src="images/carousel/carousel8.png" alt="Carousel Image 8" />
+            <img src="images/carousel/carousel9.png" alt="Carousel Image 9" />
+            <img src="images/carousel/carousel10.png" alt="Carousel Image 10" />
+            <img src="images/carousel/carousel11.png" alt="Carousel Image 11" />
+            <img src="images/carousel/carousel12.png" alt="Carousel Image 12" />
+      
+            <!-- Duplicate images for seamless loop -->
+            <img src="images/carousel/carousel1.png" alt="Carousel Image 1" />
+            <img src="images/carousel/carousel2.png" alt="Carousel Image 2" />
+            <img src="images/carousel/carousel3.png" alt="Carousel Image 3" />
+            <img src="images/carousel/carousel4.png" alt="Carousel Image 4" />
+            <img src="images/carousel/carousel5.png" alt="Carousel Image 5" />
+            <img src="images/carousel/carousel6.png" alt="Carousel Image 6" />
+            <img src="images/carousel/carousel7.png" alt="Carousel Image 7" />
+            <img src="images/carousel/carousel8.png" alt="Carousel Image 8" />
+            <img src="images/carousel/carousel9.png" alt="Carousel Image 9" />
+            <img src="images/carousel/carousel10.png" alt="Carousel Image 10" />
+            <img src="images/carousel/carousel11.png" alt="Carousel Image 11" />
+            <img src="images/carousel/carousel12.png" alt="Carousel Image 12" />
+          </div>
+        </div>
+      
+        <!-- Scroll Button -->
         <a href="#scroll-down" class="hero__scroll-btn">
-            Explore <i class="bi bi-arrow-down-short"></i>
-          </a>
-</div>
+          Explore <i class="bi bi-arrow-down-short"></i>
+        </a>
+      </div>
 
 <!-- ----------GALLERY OSA------- -->
 
@@ -84,7 +115,7 @@
             
             <!-- <button>CHECK IT OUT</button> -->
         </div>
-        <div class="gallery__card">
+        <div class="gallery__card" data-link="photos.html">
             <h2>PHOTOS</h2>
             
             <!-- <button>CHECK IT OUT</button> -->
@@ -97,23 +128,26 @@
 
 <div class="gallery" id="videos-section" style="display: none">
     
-    <h1>VIDEOS</h1>
+    <h1>V I D E O S</h1>
     <button id="back-to-portfolio"><i class="fa-solid fa-arrow-left"></i></button>
     <div class="gallery__container">
-        <div class="video__card">
+        <div class="video__card" data-link="documentaries.html">
             <h2>Documentaries</h2>
         </div>
-        <div class="video__card">
+        <div class="video__card" data-link="fiction.html">
             <h2>Fiction</h2>
         </div>
-        <div class="video__card">
+        <div class="video__card" data-link="musicvideos.html">
             <h2>Music Videos</h2>
         </div>
-        <div class="video__card">
-            <h2>Drone Shots</h2>
+        <div class="video__card" data-link="droneshots.html">
+            <h2>Drone</h2>
         </div>
     </div>
 </div>
+
+
+
 
 <!-- FOOTER -->
 
@@ -125,8 +159,7 @@
             </div>
             <div class="column2-3">
                 <h3>About Us</h3>
-                <p>Premier videography service in Tallinn, established in 2013. Our "one-man company" combines a decade
-                    of experience with a passion for storytelling.</p>
+                <p>Premier videography service in Tallinn, established in 2013. Combining a decade of experience with a passion for storytelling.</p>
             </div>
 
             <div class=column2-3>
@@ -155,6 +188,7 @@
     </div>
 
 </footer>
+
 
 
 
