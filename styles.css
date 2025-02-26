@@ -60,7 +60,7 @@ html {scroll-behavior: smooth;}
 
 #navbar__logo {
     background-color: #0a0a0a;
-    background-image: linear-gradient(to top, #ffffff 0%, #ffffff 100%);
+    background-image: linear-gradient(to top, #ffffff 0%, #fcfcfc 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -142,7 +142,18 @@ html {scroll-behavior: smooth;}
 }
 
 /*--------------------- MOBILE ---------------------------*/
-
+@media screen and (max-width: 600px) {
+    #navbar__logo{
+        font-size: 1.2rem 
+        
+       
+        
+    }
+    
+    .navbar__logo-image {
+        height: 40px;
+    }
+}
 @media screen and (max-width: 960px) {
     .navbar__container {
         display: flex;
@@ -452,12 +463,14 @@ html {scroll-behavior: smooth;}
 }
 
 .gallery__card {
-    margin: 3rem;
+    margin: 2vw;
     height:420px;
-    width: 420px;
+    width: 80vw;
+    max-width: 420px;
+    aspect-ratio: 1/1;
     border-radius: 10px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,
-     rgba(17,17,17,0.9) 100%), url("images/Videos.png");
+     rgba(17,17,17,0.9) 100%), url("images/Videos.jpg");
      
     background-size: cover;
     background-position: center;
@@ -468,7 +481,7 @@ html {scroll-behavior: smooth;}
 
 .gallery__card:nth-child(2){
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, 
-    rgba(17,17,17,0.6) 100%), url("images/pic4.jpg");
+    rgba(17,17,17,0.6) 100%), url("images/photos.jpg");
 }
 
 .gallery__card h2 {
@@ -512,7 +525,7 @@ font-weight: 200;
     width: 420px;
     border-radius: 10px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,
-     rgba(17,17,17,0.6) 100%), url("images/documentaries.png");
+     rgba(17,17,17,0.6) 100%), url("images/documentaries.jpg");
      
     background-size: cover;
     background-position: center;
@@ -598,17 +611,17 @@ font-weight: 200;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .gallery {
-        height: auto; /* oli 2000px */
-    }
-
-    .gallery h1 {
-        font-size: 1.5rem;
-    }
-
+@media screen and (max-width: 768px) { 
     .gallery__card {
-        width: 300px;
+        width: 80vw; 
+        margin: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery__card {
+        width: 90vw;
+        margin: 1vw; 
     }
 }
 
