@@ -37,7 +37,7 @@ html {scroll-behavior: smooth;}
 /* -----------NAVBAR-------------- */
 .navbar {
      background: rgba(19, 19, 19, 0.5);  /*#181818; -läbipaistev*/
-    height: 80px;
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,12 +50,12 @@ html {scroll-behavior: smooth;}
 .navbar__container {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    /* height: 80px; */  
     z-index: 1;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 5em;
 } 
 
 #navbar__logo {
@@ -79,7 +79,7 @@ html {scroll-behavior: smooth;}
 }
 
 .navbar__logo-image {
-    height: 50px; /* Adjust the height of the image */
+    height: 5vh; /* Adjust the height of the image */
     width: auto;  /* Maintains the aspect ratio */
     margin-right: 1rem; /* Adds spacing between the image and the text */
     vertical-align: middle; /* Aligns the image with the text */
@@ -141,24 +141,22 @@ html {scroll-behavior: smooth;}
     text-decoration: underline;
 }
 
-/*--------------------- MOBILE ---------------------------*/
+/*--------------------- NAVBAR MOBILE ---------------------------*/
 @media screen and (max-width: 600px) {
     #navbar__logo{
         font-size: 1.2rem 
-        
-       
-        
     }
     
     .navbar__logo-image {
-        height: 40px;
+        height: 4vh;
+        min-height: 40px;
     }
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 660px) {
     .navbar__container {
         display: flex;
         justify-content: space-between;
-        height: 80px;
+        height: 8vh;
         z-index: 1;
         width: 100%;
         max-width: 1300px;
@@ -171,7 +169,7 @@ html {scroll-behavior: smooth;}
         margin: 0;
         width: 100%;
         position: absolute;
-        top: -1000px;
+        top: -500px;
         opacity: 0; 
         transition: all 0.5s ease;
         height: 50vh;
@@ -221,14 +219,14 @@ html {scroll-behavior: smooth;}
         padding-bottom: 2rem;
     }
 
-    .button {
+    /* .button {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 80%;
         height: 80px;
         margin: 0;
-    }
+    } */
 
     .navbar__toggle .bar {
         display: block;
@@ -290,8 +288,8 @@ html {scroll-behavior: smooth;}
     z-index: 2;
     color: #fff;
     text-align: center;
-    margin-top: 15rem;
-    margin-bottom: 5rem; /* spacing above carousel */
+    margin-top: 15vh;
+    margin-bottom: 5%; /* spacing above carousel */
   }
   
   .hero-content h1 {
@@ -314,7 +312,7 @@ html {scroll-behavior: smooth;}
     z-index: 20; /* above the video */
     height: 15vh; /* 20% of hero’s total height */
     max-width: 100%;
-    overflow: hidden; /* hide the overflowing track */
+    overflow: visible; /* hide the overflowing track */
    
     
   }
@@ -325,7 +323,7 @@ html {scroll-behavior: smooth;}
     width: 7200px;
     /* Enough width to hold 24 images side by side */
     /* The animation speed depends on the total width, so we’ll handle it in keyframes. */
-    animation: marquee 20s linear infinite;
+    animation: marquee 25s linear infinite;
   }
   
   /* Pause animation on hover */
@@ -361,7 +359,7 @@ html {scroll-behavior: smooth;}
   .hero__scroll-btn {
     position: absolute;
     left: 50%;
-    bottom: 20px;
+    bottom: 2%;
     transform: translateX(-50%);
     z-index: 3; /* above everything else */
     color: #fff;
@@ -390,7 +388,24 @@ html {scroll-behavior: smooth;}
   }
   
   /* ----------- RESPONSIVE MEDIA QUERIES ----------- */
+
+  /* @media (max-height: 1120px) {
+    .hero-content {
+      margin-top: 5%;
+    }
+    .carousel-container {
+      height: 10vh; 
+    }
+  } */
+
+  @media (max-width: 660px) {
+    .hero-content {
+      margin-top: 15vh; 
+    }
+  } 
+
   @media (max-width: 480px) {
+   
     .hero-content h1 {
       font-size: 1.5rem;
     }
@@ -401,6 +416,8 @@ html {scroll-behavior: smooth;}
   }
   
   @media (min-width: 768px) {
+   
+
     .hero-content h1 {
       font-size: 2rem;
     }
@@ -463,9 +480,9 @@ html {scroll-behavior: smooth;}
 }
 
 .gallery__card {
-    margin: 2vw;
-    height:420px;
-    width: 80vw;
+    
+    margin: 5vw;
+    width: 40vw;
     max-width: 420px;
     aspect-ratio: 1/1;
     border-radius: 10px;
@@ -485,17 +502,13 @@ html {scroll-behavior: smooth;}
 }
 
 .gallery__card h2 {
-position: absolute;
-top: 350px;
-left: 30px;
+position: relative;
+top: 84%;
+left: 4%;
 font-weight: 200;
 }
 
-.gallery__card p {
-    position: absolute;
-    top: 400px;
-    left: 30px;
-}
+
 
 /* .gallery__card button {
     color: #fff;
@@ -520,9 +533,10 @@ font-weight: 200;
 /* ---------VIDEO CARDS CSS------------ */
 
 .video__card {
-    margin: 3rem;
-    height:420px;
-    width: 420px;
+    margin: 3vw;
+    width: 80vw;
+    max-width: 420px;
+    aspect-ratio: 1/1;
     border-radius: 10px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,
      rgba(17,17,17,0.6) 100%), url("images/documentaries.jpg");
@@ -548,9 +562,9 @@ font-weight: 200;
 }
 
 .video__card h2 {
-    position: absolute;
-    top: 350px;
-    left: 30px;
+    position: relative;
+    top: 84%;
+    left: 4%;
     font-weight: 200;
     }
 
@@ -570,7 +584,7 @@ font-weight: 200;
     color: #979797;
     font-size: xx-large;
     position:absolute;
-    top: 100px;    
+    top: 7rem;    
 }
 
 #backButton {
@@ -581,7 +595,7 @@ font-weight: 200;
     color: #979797;
     font-size: xx-large;
     position:absolute;
-    top: 100px;    
+    top: 7rem;    
 }
 
 .fa-arrow-left:hover {
@@ -589,25 +603,20 @@ font-weight: 200;
     opacity: 0.8;
   }
 
-@media screen and (max-width: 2000px) {
-    .gallery {
-        height: auto;
-    }
-    
-    .gallery h1 {
-        font-size: 2rem;
-        margin-top: 2rem;
-    }
-}
+
 
 @media screen and (max-width: 960px) {
     .gallery {
-        height: auto;   /* oli 1600px */
+        height: auto;   
     }
     
     .gallery h1 {
         font-size: 2rem;
         margin-top: 2rem;
+    }
+    .gallery__card {
+        width: 80vw; 
+        margin: 1.5vw;
     }
 }
 
@@ -620,7 +629,7 @@ font-weight: 200;
 
 @media screen and (max-width: 480px) {
     .gallery__card {
-        width: 90vw;
+        width: 80vw;
         margin: 1vw; 
     }
 }
