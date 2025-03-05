@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    /* margin: 0;  globaalselt on peatükkide vahed suuremad */
+   /*  margin: 0;  */
     padding: 0;
     font-family: "Montserrat" , serif; 
     
@@ -452,7 +452,7 @@ html {scroll-behavior: smooth;}
     flex-direction: column;
     align-items: center;
     height: auto;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
     position:relative;
 }
 
@@ -625,13 +625,22 @@ font-weight: 200;
         width: 80vw; 
         margin: 1.5vw;
     }
+    .gallery h2 {
+      
+     
+  }
 }
 
 @media screen and (max-width: 480px) {
     .gallery__card {
         width: 80vw;
         margin: 1vw; 
+        margin-top: 4vw;
     }
+    .gallery h2 {
+      font-size: 5vw;
+      
+  }
 }
 
 
@@ -666,22 +675,22 @@ font-weight: 200;
 
 .column1 {
     width: 100%;
-    margin-bottom: 1.5rem;
+    
     text-align: center;
     box-sizing: border-box;
 
 }
 
-@media (min-width: 576px) {
+@media (min-width: 700px) {
     .column1 {
         width: 33.33%
     }
 }
 
 .footer-logo {
-    width: 300px;
-    margin-bottom: 1.5rem;
-    max-width: 100%;
+    width: 60vw;
+   max-width: 200px;
+    
     height: auto;
 
 }
@@ -696,10 +705,12 @@ font-weight: 200;
     box-sizing: border-box; /* Ensures padding/border don't affect width */
     line-height: 2;
     font-weight: 200;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /* Add responsiveness for larger screens (col-sm-4 equivalent) */
-@media (min-width: 576px) {
+@media screen and (min-width: 700px) {
     .column2-3 {
         width: 33.33%; /* Takes up 4/12 columns (one-third of the row) */
     }
@@ -726,7 +737,7 @@ font-weight: 200;
     align-items: center; /* align-items-center equivalent */
     box-sizing: border-box; /* Ensures padding/border doesn't affect size */
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .column-brand {
         width: 33.33%; /* Takes up 4/12 columns (one-third of the row) */
     }
@@ -758,7 +769,7 @@ font-weight: 200;
 }
 
 /* Responsive width for col-md-4 equivalent */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .social-media-links {
         width: 33.33%; /* col-md-4 equivalent */
     }
@@ -815,7 +826,7 @@ font-weight: 200;
 }
 
 .about-pic {
-    width: 400px
+    width: 40vw
 }
 
 .about-row {
@@ -841,3 +852,40 @@ font-weight: 200;
 }
 
 
+
+
+
+/*----------------VIDEO GALLERY -----------------*/
+
+.video-gallery {
+  display:grid;
+ 
+  gap: 1rem; 
+  max-width: 1200px;  /* limit total width, optional */
+  margin: 2rem auto;  /* center and add spacing */
+  padding: 0 1rem;    /* some horizontal padding */
+}
+
+.video {
+  text-align: center; /* center thumbnails + titles */
+}
+
+.videoThumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  
+  transition: transform 0.2s ease; /* a little hover effect */
+}
+
+.videoThumb:hover {
+  transform: scale(1.03);
+}
+
+.videoTitle {
+    
+  font-weight: 300;
+  font-size: 1.2rem;
+  
+  color: #cccccc;               /* text color */
+}

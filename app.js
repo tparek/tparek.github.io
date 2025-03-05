@@ -122,3 +122,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/* ---------------fancybox js ----------------*/
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Bind Fancybox to any element with data-fancybox="gallery"
+  Fancybox.bind('[data-fancybox="gallery"]', {
+    // Optional custom settings:
+    Toolbar: {
+      display: {
+        left: ["infobar"],
+        middle: ["zoomIn", "zoomOut", "fullscreen"],
+        right: ["close"]
+      }
+    },
+    
+    // Example: set a default aspect ratio for iframes
+    Html: {
+      video: {
+        autoplay: true,
+        allowfullscreen: "true"
+      }
+    }
+  });
+});
+/*------------ fancybox js---------------- */
