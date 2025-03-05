@@ -827,6 +827,7 @@ font-weight: 200;
 
 .about-pic {
     width: 40vw
+    max-with: 400px;
 }
 
 .about-row {
