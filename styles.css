@@ -268,7 +268,7 @@ html {scroll-behavior: smooth;}
     width: 100%;
     height: 50%;
     object-fit: cover;   /* ensures the video covers entire area */
-    z-index: 0;          /* behind overlay and content */
+    z-index: 0;          
   }
   
   /* --- HERO OVERLAY --- */
@@ -303,6 +303,8 @@ html {scroll-behavior: smooth;}
     font-weight: 100;
     font-size: 1.5rem;
     margin: 0;
+    color: white;
+    text-decoration: underline;
   }
   
  /* Carousel container: ~20% of hero */
@@ -889,4 +891,180 @@ font-weight: 200;
   font-size: 1.2rem;
   
   color: #cccccc;               /* text color */
+}
+
+.fancybox__container {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+.fancybox__iframe {
+  border: none !important;
+  background: none !important;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.fancybox__content {
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/*----------------PHOTO GALLERY -----------------*/
+
+
+.photo-gallery-container {
+  background-color: #000000;
+  padding-bottom: 3rem;
+}
+.photo-gallery {
+  /* Center the gallery and limit its total width if you like: */
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  /* Create 5 equal-width columns with some spacing: */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; /* space between items */
+}
+
+/* Ensure images don’t blow out their containers: */
+.photo-gallery img {
+  width: 100%;    /* fill the grid cell’s width */
+  height: auto;   /* keep aspect ratio */
+  object-fit: cover; /* optional if you want to clip instead of shrink */
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .photo-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 per row on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on small screens */
+  }
+}
+
+/*---------CONTACT FORM----------*/
+
+#open-popup {
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 2rem;
+  cursor: pointer;
+  
+}
+
+/* 
+  Popup Overlay 
+  - Covers the entire viewport 
+  - Initially hidden with `display: none;`
+  - Semi-transparent background
+*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* ensure it’s above other elements */
+}
+
+
+
+
+/*
+  When we want to show the popup, 
+  we'll add a class like "active" via JavaScript
+*/
+.popup-overlay.active {
+  display: flex;
+}
+
+/* 
+  Popup Content 
+  - The modal "box" inside the overlay
+*/
+.popup-content {
+  background-color: #000000;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative; /* for the close button positioning */
+  
+}
+
+/* Close Button inside the popup */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Contact Form Headings */
+.popup-content h2 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: white;
+}
+
+.popup-content p {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 3px solid #696969;
+  border-radius: 4px;
+  
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #233D54;
 }

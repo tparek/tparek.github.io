@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+
 
 /* ---------------fancybox js ----------------*/
 
@@ -146,4 +146,76 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
-/*------------ fancybox js---------------- */
+
+
+});
+
+// 1) Grab the "open" link element from the page
+const openPopupLink = document.getElementById('open-popup');
+
+// 2) On click, load the snippet + show the popup
+openPopupLink.addEventListener('click', function(event) {
+  event.preventDefault(); // stop the link from navigating anywhere
+
+  // If we haven't already loaded the popup snippet, load it
+  // Alternatively, if you want to load fresh each time, you can just always fetch it.
+  if (!document.getElementById('popup-overlay')) {
+    loadPopupSnippet().then(() => {
+      showPopup();
+    });
+  } else {
+    // If the snippet is already loaded, just show it
+    showPopup();
+  }
+});
+
+// This function fetches the HTML snippet and injects it into #popup-container
+function loadPopupSnippet() {
+  return fetch('contact-form_modal.html')
+    .then(response => response.text())
+    .then(html => {
+      // Insert the snippet into #popup-container
+      document.getElementById('popup-container').innerHTML = html;
+
+      // Now that the snippet is in the DOM, attach the event listeners 
+      // to the close button and overlay
+      attachPopupEventListeners();
+    })
+    .catch(error => {
+      console.error('Error loading popup snippet:', error);
+    });
+}
+
+function attachPopupEventListeners() {
+  // Grab the newly added elements
+  const popupOverlay = document.getElementById('popup-overlay');
+  const closePopup = document.getElementById('close-popup');
+
+  // Close button
+  closePopup.addEventListener('click', function() {
+    hidePopup();
+  });
+
+  // Click outside the popup-content
+  popupOverlay.addEventListener('click', function(e) {
+    if (e.target === popupOverlay) {
+      hidePopup();
+    }
+  });
+}
+
+function showPopup() {
+  // Add the "active" class to display the overlay
+  const popupOverlay = document.getElementById('popup-overlay');
+  if (popupOverlay) {
+    popupOverlay.classList.add('active');
+  }
+}
+
+function hidePopup() {
+  // Remove the "active" class
+  const popupOverlay = document.getElementById('popup-overlay');
+  if (popupOverlay) {
+    popupOverlay.classList.remove('active');
+  }
+}
